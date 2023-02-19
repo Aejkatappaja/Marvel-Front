@@ -25,6 +25,7 @@ const Character = ({ SaveDataToLocalStorage }) => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
   return isLoading ? (
     <section className="fav">
@@ -44,7 +45,6 @@ const Character = ({ SaveDataToLocalStorage }) => {
             borderRadius: "40px",
             border: "2px solid  #696969",
             padding: "16px",
-            color: "#713200",
             backgroundColor: "#181717",
             fontFamily: "Marvel",
             color: "white",
@@ -69,11 +69,11 @@ const Character = ({ SaveDataToLocalStorage }) => {
                 className={click ? "clicked" : "notClicked"}
                 onClick={() => {
                   setClick(!click);
-                  {
-                    click
-                      ? toast.error(`${data.name} successfully removed`)
-                      : toast.success(`${data.name} successfully added`);
-                  }
+
+                  click
+                    ? toast.error(`${data.name} successfully removed`)
+                    : toast.success(`${data.name} successfully added`);
+
                   SaveDataToLocalStorage(data);
                 }}
               >

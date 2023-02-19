@@ -8,15 +8,11 @@ const Footer = () => {
         <div className="final">
           <div className="reactLogo">
             <p>Made with</p>
-            <a href="https://fr.reactjs.org/" target="_blank" rel="noopener">
+            <a href="https://fr.reactjs.org/">
               <img src={reactLogo} alt="" />
             </a>
             <p>at</p>{" "}
-            <a
-              href="https://www.lereacteur.io/"
-              target="_blank"
-              rel="norefferer"
-            >
+            <a href="https://www.lereacteur.io/">
               <img className="reactt" src={reacteur} alt="" />
             </a>
             <p>by Frank</p>
