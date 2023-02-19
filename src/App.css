@@ -1,38 +1,617 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Marvel:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+body {
+  background-color: rgb(24, 23, 23);
+  height: 100vh;
+}
+
+/*---------------Characters Page----------------*/
+.characters {
+  font-family: "Marvel";
+  background-color: rgb(24, 23, 23);
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1430px;
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+.borderImg {
+  height: 164px;
+  border-top-right-radius: 47px;
+  border-bottom-left-radius: 47px;
+  border-top-left-radius: 17px;
+  border-bottom-right-radius: 17px;
+  border: 2px solid rgba(104, 98, 98, 0.439);
+  box-shadow: 0 0 25px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroes {
+  height: 160px;
+  width: 160px;
+  border-top-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 3px solid rgb(24, 23, 23);
+  object-fit: cover;
+  box-shadow: 0 0 12px black;
+}
+
+.card {
+  height: 270px;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid rgb(24, 23, 23);
+  justify-content: space-around;
+  align-items: center;
+  border-top-right-radius: 45px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 15px;
+  background-color: rgb(202, 202, 202);
+}
+
+.borderCard:hover {
+  box-shadow: 0 0 29px #ed171e;
+  cursor: pointer;
+  border: 3px solid rgb(24, 23, 23);
+  transform: scale(1.04);
+}
+.titleCard {
+  font-size: 19px;
+  display: flex;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(24, 23, 23);
+  /* border-bottom: solid 0.5px #080808; */
+  /* border-top: solid 0.5px #080808; */
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #3f3c3d;
+}
+
+.searchBar {
+  margin-top: 35px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.searchBar input {
+  width: 400px;
+  height: 30px;
+  border: none;
+  background-color: rgb(24, 23, 23);
+  outline: none;
+  text-indent: 5px;
+  border-bottom: rgb(147, 144, 144) solid 2px;
+  color: rgb(202, 202, 202);
+}
+
+.searchBar input::placeholder {
+  opacity: 60%;
+  font-family: "Marvel";
+  font-size: 18px;
+}
+
+.borderCard {
+  border-top-right-radius: 47px;
+  border-top-left-radius: 17px;
+  border-bottom-left-radius: 47px;
+  border-bottom-right-radius: 17px;
+  border: 3px #666464 solid;
+  box-shadow: 0 0 10px rgb(141, 130, 130);
+  transition: 0.6s;
+  height: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marvelButton {
+  border: none;
+  background-color: #181717;
+  color: #807e7e;
+  font-family: "Marvel";
+  font-weight: bold;
+  font-size: 28px;
+  text-shadow: 0 0 12px rgb(153, 141, 141);
+}
+
+.marvelButton:hover {
+  cursor: pointer;
+  text-shadow: 0 0 12px #ed171e;
+}
+
+.marvelButton:active {
+  transform: translateY(2px);
+}
+
+.marvelButtonOff {
+  visibility: hidden;
+  height: 35px;
+  width: 40px;
+}
+
+.buttonBar {
+  display: flex;
+  width: 1359px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/*---------------Comics Page----------------*/
+
+.comics {
+  font-family: "Marvel";
+  background-color: rgb(24, 23, 23);
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1215px;
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+.books {
+  height: 350px;
+  width: 203px;
+  /* border: red solid 1px; */
+  position: relative;
+}
+.books:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 400px;
+  background-color: rgb(153, 141, 141);
+  color: #000000;
   text-align: center;
+  border-radius: 10px;
+  padding: 5px 0;
+  transition: opacity 0.8s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  left: 0%;
+  top: 90%;
+  border: 3px solid black;
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.books:hover:before {
+  opacity: 0.9;
+  visibility: visible;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.books img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border: rgb(215, 208, 208) solid 2px;
+}
+.comicCover {
+  height: 305px;
+  width: 205px;
+  box-shadow: 0 0 15px rgb(215, 208, 208);
+  border: 1px solid rgb(74, 73, 73);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+.comicCover:hover {
+  box-shadow: 0 0 29px #ed171e;
+  cursor: pointer;
+  border: 3px solid rgb(24, 23, 23);
+  transform: scale(1.1);
+}
+.comicTitle {
+  width: 195px;
+  margin-top: 10px;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.textTitle {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #807e7e;
+  font-weight: bold;
+}
+
+/*---------------Character Page----------------*/
+
+.charInfos {
+  font-family: "Marvel";
+  background-color: rgb(24, 23, 23);
+  margin-bottom: 200px;
+  display: flex;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1320px;
+  gap: 50px;
+  margin-top: 80px;
+  flex-direction: column;
+}
+
+.backUp {
+  width: 30px;
+  height: 20px;
+  color: #807e7e;
+  border: none;
+  background-color: #181717;
+  font-size: 26px;
+  text-shadow: 0 0 12px rgb(153, 141, 141);
+}
+
+.backUp:hover {
+  cursor: pointer;
+  text-shadow: 0 0 12px #ed171e;
+}
+
+.backUp:active {
+  transform: translateY(2px);
+}
+
+.heroProfile img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: #d5c9ca 2px solid;
+}
+
+.heroProfile {
+  width: 402px;
+  height: 402px;
+  border-radius: 50%;
+  border: #9a9696 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 34px #ed171e;
+}
+
+.descHero {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+
+.superInfos {
+  width: 1300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  font-size: 25px;
+  color: #807e7e;
+  height: 500px;
+  border: #807e7e solid 1px;
+  border-radius: 35px;
+  box-shadow: 0 0 29px #d5c9ca;
+}
+
+.comicsIn {
+  width: 650px;
+  height: 200px;
+  border: rgb(186, 178, 178) 1px solid;
+  border-radius: 35px;
+  box-shadow: 0 0 19px #d5c9ca;
+  display: flex;
+  overflow-x: scroll;
+  gap: 2px;
+}
+
+.comicsIn::-webkit-scrollbar {
+  display: none;
+}
+
+.bigHeroName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bigHeroName button:hover {
+  cursor: pointer;
+}
+
+.bigHeroName button:active {
+  transform: translateY(2px);
+}
+
+.clicked {
+  color: rgb(229, 179, 113);
+  background-color: #181717;
+  border: none;
+  font-size: 50px;
+  padding-bottom: 10px;
+  text-shadow: 0 0 6px rgb(229, 179, 113);
+}
+.notClicked {
+  background-color: #181717;
+  border: none;
+  font-size: 50px;
+  color: #807e7e;
+  padding-bottom: 10px;
+  text-shadow: 0 0 6px rgb(153, 141, 141);
+}
+.toaster {
+  height: 15px;
+  width: 50px;
+}
+.bigHeroName h1 {
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 20px #d5c9ca;
+}
+
+.comicsList {
+  display: flex;
+  position: relative;
+}
+
+.comicsList:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 200px;
+  background-color: rgb(153, 141, 141);
+  color: #000000;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 0;
+  transition: opacity 0.8s ease-in-out;
+  position: absolute;
+  z-index: 3;
+  left: 0%;
+  top: 5%;
+  border: 1px solid black;
+}
+
+.comicsList:hover:before {
+  opacity: 0.9;
+  visibility: visible;
+  font-size: 18px;
+}
+
+.scrollPics {
+  display: flex;
+  border: 1px solid white;
+}
+
+.appears span {
+  text-shadow: 0 0 8px #ed171e;
+  font-size: 18px;
+}
+
+/*---------------Home Page----------------*/
+.homeBanner {
+  font-family: "Marvel";
+  background-color: rgb(24, 23, 23);
+  display: flex;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1515px;
+  border: solid 6px rgb(0, 0, 0);
+  border-radius: 19px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 45px rgb(137, 136, 136);
+  margin-bottom: 70px;
+}
+.fck {
+  width: 1505px;
+  height: 705px;
+  border: rgb(119, 116, 116) solid 4px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgb(215, 208, 208);
+}
+.fck img {
+  width: 1500px;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+/*---------------Footer----------------*/
+.bottomLine {
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Marvel";
+  color: white;
+  font-size: 18px;
+  margin-top: 30px;
+  /* border-top: solid 1px rgb(153, 141, 141); */
+}
+
+.bottomLine span {
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.blue {
+  color: rgb(97, 237, 237);
+}
+
+.purple {
+  color: #5c47d2;
+}
+
+.final {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reactLogo img {
+  width: 28px;
+}
+.reactt {
+  width: 45px;
+  border-radius: 50%;
+}
+.reactLogo {
+  width: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-right: solid 0.5px rgb(153, 141, 141);
+  border-left: solid 0.5px rgb(153, 141, 141);
+}
+
+/*---------------Loading----------------*/
+
+.water {
+  width: 250px;
+  height: 250px;
+  background-color: #b71318;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 30px 0 rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(136, 113, 113, 0.5);
+  overflow: hidden;
+  border: 4px rgb(32, 32, 32) solid;
+}
+.water:before,
+.water:after {
+  content: "";
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  top: -150px;
+  background-color: #fff;
+}
+.water:before {
+  border-radius: 45%;
+  background: rgba(255, 255, 255, 0.7);
+  animation: wave 5s linear infinite;
+}
+.water:after {
+  border-radius: 35%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: wave 5s linear infinite;
+}
+@keyframes wave {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.borderLoader {
+  width: 255px;
+  height: 255px;
+  border: solid 3px #706d6d;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgb(215, 208, 208);
+}
+/*---------------Favorites---------------*/
+
+.fav {
+  font-family: "Marvel";
+  background-color: rgb(24, 23, 23);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1430px;
+  gap: 50px;
+  margin-bottom: 70px;
+  height: 700px;
+}
+
+.fav article {
+  margin-top: 150px;
+}
+
+.fav p {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.lastOne {
+  width: 100vw;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Marvel";
+  color: white;
+  font-size: 18px;
+  margin-top: 30px;
+  border: white solid 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.finally img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.finally {
+  border-radius: 50%;
+  width: 122px;
+  height: 122px;
+  border: white solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.last {
+  font-family: "Marvel";
+  background-color: rgb(24, 23, 23);
+  display: flex;
+  width: 600px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 50px;
+  margin-bottom: 70px;
+  font-size: 35px;
+  color: #706d6d;
+  border: #706d6d solid 2px;
+  border-radius: 65px;
+  box-shadow: 0 0 20px rgb(215, 208, 208);
+}
+
+.las h1 {
+  color: #666464;
+  font-size: 50px;
+  font-family: "Marvel";
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
 }
