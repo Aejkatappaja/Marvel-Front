@@ -72,8 +72,6 @@ body {
   justify-content: center;
   align-items: center;
   color: rgb(24, 23, 23);
-  /* border-bottom: solid 0.5px #080808; */
-  /* border-top: solid 0.5px #080808; */
   font-weight: bold;
   text-shadow: 1px 1px 3px #3f3c3d;
 }
@@ -166,7 +164,6 @@ body {
 .books {
   height: 350px;
   width: 203px;
-  /* border: red solid 1px; */
   position: relative;
 }
 .books:before {
@@ -445,7 +442,6 @@ body {
   color: white;
   font-size: 18px;
   margin-top: 30px;
-  /* border-top: solid 1px rgb(153, 141, 141); */
 }
 
 .bottomLine span {
